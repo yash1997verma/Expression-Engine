@@ -63,20 +63,20 @@ The application generates and displays the expressions in the expected JSON form
 To run this project locally, follow these steps:
 
 1. Clone the repository to your local machine:
-```bash
-git clone https://github.com/yash1997verma/WeatherApp.git
+    ```bash
+    git clone https://github.com/yash1997verma/WeatherApp.git
 
 2. Change into the project directory:
-```bash
-cd expression-engine-ui
+    ```bash
+    cd expression-engine-ui
 
 3. Install dependencies:
-```bash
-npm install
+    ```bash
+    npm install
 
 4. Run the application
-```bash
-npm start
+    ```bash
+    npm start
 
 
 **Screenshots**

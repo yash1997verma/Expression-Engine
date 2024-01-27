@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { expressionActions } from '../redux/ExpressionsSlice';
-import ReactJson from 'react-json-view';
+// import ReactJson from 'react-json-view';
 
 
 function Output({toggleOutput}) {
@@ -42,8 +42,8 @@ function Output({toggleOutput}) {
       </svg>
 
       
-
-      <ReactJson 
+      
+      {/* <ReactJson 
         style={{
           width: '100%', 
           height: '500px',
@@ -52,7 +52,7 @@ function Output({toggleOutput}) {
           scrollbarColor: '#888 #f5f5f5', 
         }} 
         src={output}  
-      />
+      /> */}
     </div>
   )
 }
