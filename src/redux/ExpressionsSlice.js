@@ -5,12 +5,24 @@ import toast from 'react-hot-toast';
 const expressionSlice = createSlice({
     name: 'expressions',
     initialState: {
-        expressionList: [1],
+        combinator: 'AND',
+        expressionList: [],
         JsonData: {}
     },
     reducers:{
         addExpresssion: (state, action)=>{
-
+            // console.log(action.payload)
+            state.expressionList = [...state.expressionList, action.payload];
+            toast.success('Expression Added');
+        },
+        deleteExpression: (state, action)=>{
+            const deleteId = action.payload;
+            const newList = state.expressionList.filter(expression => expression.id !== deleteId);
+            state.expressionList = newList;
+            toast.success('Deleted Successfully !!');
+        },
+        setCombinator: (state, action)=>{
+            state.combinator = action.payload;
         }
     }
 });

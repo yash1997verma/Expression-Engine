@@ -1,15 +1,34 @@
 import React from 'react';
-
-
-function Expression() {
+import { Button } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { expressionActions } from '../redux/ExpressionsSlice';
+function Expression({ expressionData }) {
+  const dispatch = useDispatch();
+  const deleteExpression = ()=>{
+    dispatch(expressionActions.deleteExpression(expressionData.id));
+  }
   return (
-    <div>
-     {/* <div className='mt-6'>
-                    <Button style={{ marginTop: '30px' }} variant="danger" type="submit">
-                        Delete
-                    </Button>
-                    </div> */}
-    </div>
+    <tr>
+      <td>
+        <span>{expressionData.ruleType}</span>
+      </td>
+      <td>
+        <span>{expressionData.operator}</span>
+      </td>
+      <td >
+        <span>{expressionData.score}</span>
+      </td>
+      <td >
+        <span>{expressionData.value}</span>
+      </td>
+      <td className="text-center">
+        <Button onClick={deleteExpression}  variant="danger" size='sm' type="submit">
+          Delete
+        </Button>
+      </td>
+    
+      
+    </tr>
   );
 }
 

@@ -23,17 +23,21 @@ function App() {
         </div>
       }
 
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <img src="/startup.gif" alt="" style={{ width: '60px', height: '60px', marginTop:'20px' }} />
-        <h1 style={{ fontWeight: 'bold', fontSize: '1.5rem', marginTop: '30px', marginBottom: '10px' }}>
-          Expression Engine
-        </h1>
-      </div>
-
       <Toaster /> 
 
-      <div style={{display:'flex', justifyContent: 'center',}}>
-        <ExpressionList toggleForm={toggleForm}/>
+
+      <div style={{display:'flex',flexDirection:'column' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src="/startup.gif" alt="" style={{ width: '60px', height: '60px', marginTop:'20px' }} />
+          <h1 style={{ fontWeight: 'bold', fontSize: '1.5rem', marginTop: '30px', marginBottom: '10px' }}>
+            Expression Engine
+          </h1>
+        </div>
+
+
+        <div style={{display:'flex', justifyContent: 'center',}}>
+          <ExpressionList toggleForm={toggleForm}/>
+        </div>
       </div>
 
     </Provider>
