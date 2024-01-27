@@ -89,6 +89,7 @@ function ExpressionForm({toggleForm}) {
                 <Form.Label>Operator</Form.Label>
                 <Form.Select size="sm" ref={operatorRef}>
                 <option>&lt;</option>
+                <option>&gt;</option>
                 <option>&ge;</option>
                 <option>&le;</option>
                 <option>=</option>

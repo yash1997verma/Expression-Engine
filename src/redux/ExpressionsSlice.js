@@ -2,16 +2,36 @@ import {createSlice} from "@reduxjs/toolkit";
 import toast from 'react-hot-toast';
 
 
+//to get expected output in a JSON format
+export const convertStateToJson = (expressionList, combinator) => {
+      
+    const rules = expressionList.map((expression) => ({
+      key: expression.ruleType,
+      output: {
+        value: expression.value,
+        operator: expression.operator,
+        score: expression.score,
+      },
+    }));
+    const result = {
+        rules,
+        combinator,
+    };
+
+
+    return result;
+
+};
+
 const expressionSlice = createSlice({
     name: 'expressions',
     initialState: {
         combinator: 'AND',
         expressionList: [],
-        JsonData: {}
+        output: {}
     },
     reducers:{
         addExpresssion: (state, action)=>{
-            // console.log(action.payload)
             state.expressionList = [...state.expressionList, action.payload];
             toast.success('Expression Added');
         },
@@ -23,6 +43,9 @@ const expressionSlice = createSlice({
         },
         setCombinator: (state, action)=>{
             state.combinator = action.payload;
+        },
+        setOutput: (state, action)=>{
+            state.output  = convertStateToJson(state.expressionList, state.combinator);
         }
     }
 });
