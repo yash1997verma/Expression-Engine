@@ -55,7 +55,7 @@ function ExpressionList({toggleForm, toggleOutput}) {
         <thead>
           <tr>
             <th>Rule Type</th>
-            <th>Opertor</th>
+            <th>Operator</th>
             <th>Score</th>
             <th>Value</th>
             <th>Delete</th>

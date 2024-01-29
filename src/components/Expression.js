@@ -21,7 +21,7 @@ function Expression({ expressionData }) {
       <td >
         <span>{expressionData.value}</span>
       </td>
-      <td className="text-center">
+      <td className="">
         <Button onClick={deleteExpression}  variant="danger" size='sm' type="submit">
           Delete
         </Button>
